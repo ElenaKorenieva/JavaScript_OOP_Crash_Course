@@ -11,7 +11,7 @@ class Book {
 
   getAge() {
     const years = new Date().getFullYear() - this.year;
-    return `${this.title} is ${years} years old`;
+    return `${this.title} is ${years} years old.`;
   }
 
   revise(newYear) {
@@ -19,16 +19,18 @@ class Book {
     this.revised = true;
   }
 
+  //static we dont need to instantiate
   static topBookStore() {
     return "Barnes & Noble";
   }
 }
 
-// Instantiate Object
-const book1 = new Book("Book One", "John Doe", "2013");
+//Instantiate Object
+const book1 = new Book("Book One", "Neil Gaiman", "2015");
 
 console.log(book1);
-book2.revised("2018");
+book1.revise("2018");
 console.log(book1);
 
+//static (instead pass book1 we pass the className)
 console.log(Book.topBookStore());
